@@ -4,7 +4,6 @@ from datetime import timedelta
 import re
 
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
-uri = config("DATABASE_URL")
 
 
 class Config:
@@ -31,9 +30,7 @@ class TestConfig:
 
 
 class ProdConfig:
-    SQLALCHEMY_DATABASE_URI = uri
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
-    DEBUG = config('DEBUG', cast=bool)
+    pass
 
 
 config_dict = {
