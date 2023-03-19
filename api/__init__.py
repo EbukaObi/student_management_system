@@ -18,17 +18,20 @@ def create_app(config=config_dict['dev']):
 
     authorizations = {
         "Bearer Auth": {
-            'type': "apikey",
-            'in': 'header',
-            'name': "Authorization",
-            'description': "Add a jwt with ** Bearer &lt;JWT&gt; to authorize"
+            "type": "apiKey",
+            "in": "header",
+            "name": "Authorization",
+            "description": "Add a JWT token to the header with ** Bearer &lt;JWT&gt; ** token to authorize"
         }
     }
-    api = Api(app,
-              title="student-Management-system",
-              description="A REST API for Student Management",
-              authorizations=authorizations,
-              security="Bearer Auth")
+
+    api = Api(
+        app,
+        title='Student Management API',
+        description='A student management REST API service',
+        authorizations=authorizations,
+        security='Bearer Auth'
+        )
 
     api.add_namespace(student_namespace, path='/student')
     api.add_namespace(course_namespace, path='/course')
