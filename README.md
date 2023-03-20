@@ -8,7 +8,6 @@
 - [Contributing](#contributing)
 - [Live Demo](#live-demo)
 - [Upcoming Features](#upcoming-features)
-- [License](#license)
 
 ## Introduction
 This is a simple school management system API built with Flask and Flask_RestX built by according to [this requirements](https://docs.google.com/document/d/19ayXN5P1oV2aqW_7-As6EUpn7OQShkpAlZK4wRbrgBQ/). It is a simple API that allows you if you are an Admin to perform CRUD operations on students and courses. It also allows you to register students to courses and add grade for students.
