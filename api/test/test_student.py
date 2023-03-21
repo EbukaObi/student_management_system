@@ -25,8 +25,8 @@ class CourseTestCase(unittest.TestCase):
 
     def test_create_new_student(self):
         payload = {
-            'name': 'clack',
-            'email': 'clack@gmail.com',
+            'name': 'ebuka',
+            'email': 'julianobi023@gmail.com',
             'phone': '123-456-7890'
         }
 
@@ -47,16 +47,20 @@ class CourseTestCase(unittest.TestCase):
     def test_update_student(self):
         data = {
             'id': 1,
-            'name': 'clack',
-            'email': 'clack@gmail.com',
+            'name': 'ebuka',
+            'email': 'julianobi023
+            
+            
+           
+            @gmail.com',
             'phone': '123-456-7890'
         }
         response = self.client.post('/student/new_student', json=data)
         data = json.loads(response.data)
         student_id = ['id']
         update_data = {
-            'name': 'clack-updated',
-            'email': 'clack-updated@gmail.com',
+            'name': 'ebuka-updated',
+            'email': 'julianobi023-updated@gmail.com',
             'phone': '111-222-3333'
         }
         update_response = self.client.put(f'/student/{student_id}', json=update_data)
@@ -73,8 +77,8 @@ class CourseTestCase(unittest.TestCase):
 
     def test_delete_student(self):
         payload = {
-            'name': 'clack',
-            'email': 'clack@gmail.com',
+            'name': 'ebuka',
+            'email': 'julianobi023@gmail.com',
             'phone': '123-456-7890'
         }
         response = self.client.post('/student/new_student', json=payload)
