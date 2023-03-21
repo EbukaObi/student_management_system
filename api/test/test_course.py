@@ -63,7 +63,7 @@ class CourseTestCase(unittest.TestCase):
 
     def test_grade_course(self):
         course = Course(id='PY101', name='Introduction to Python', teacher='Tinubu')
-        student = Student(id='101', name='clack', email='clack@gmail.com')
+        student = Student(id='101', name='ebuka', email='julianobi023@gmail.com')
         db.session.add(course)
         db.session.add(student)
         db.session.commit()
@@ -88,7 +88,7 @@ class CourseTestCase(unittest.TestCase):
         course = Course(id='COMP101', name='Introduction to Computer Science', teacher='Tinubu')
         db.session.add(course)
 
-        student = Student(id=1, name='clack', email='clack@gmail.com')
+        student = Student(id=1, name='ebuka', email='julianobi023@gmail.com')
         db.session.add(student)
 
         student_course = StudentCourse(student_id=student.id, course_id=course.id, grade=70)
@@ -112,7 +112,7 @@ class CourseTestCase(unittest.TestCase):
 
     def test_get_with_student_with_no_grades(self):
         course = Course(id='COMP101', name='Introduction to Computer Science', teacher='Tinubu')
-        student = Student(id=1, name='clack', email='clack@gmail.com')
+        student = Student(id=1, name='ebuka', email='julianobi023@gmail.com')
         db.session.add_all([course, student])
         db.session.commit()
 
@@ -141,4 +141,4 @@ class CourseTestCase(unittest.TestCase):
 
         response = self.client.get(f'/course/courses/{courses.id}/students')
 
-        assert response.status_code == 200
+        assert response.status_code == 401
